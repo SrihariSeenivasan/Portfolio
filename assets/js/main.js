@@ -42,13 +42,13 @@ function downloadResume() {
   
       // Collect form data matching EmailJS template variable names
       const formData = {
-          from_name: document.getElementById('name').value,  // Matches EmailJS template variable for name
+          to_name: document.getElementById('name').value,  // Matches EmailJS template variable for name
           from_email: document.getElementById('email').value, // Matches EmailJS template variable for email
           message: document.getElementById('message').value   // Matches EmailJS template variable for message
       };
   
       // Send email using EmailJS
-      emailjs.send('service_bgmi5569', 'template_ro4kvau', formData)
+      emailjs.send("service_bgmi5569", "template_ro4kvau", formData)
       .then(function(response) {
           alert('Your message has been sent successfully!');
           document.getElementById('contactForm').reset();
