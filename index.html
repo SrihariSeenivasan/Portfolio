@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
     />
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
@@ -1066,43 +1067,47 @@
 
       <section class="contact section" id="contact">
         <h2 class="section-title" data-aos="fade-down">Contact</h2>
-
+      
         <div class="contact_container bd_grid">
-          <form action="#" class="contact_form">
+          <form id="contactForm" class="contact_form">
             <input
               type="text"
+              id="name"
+              name="name"
               placeholder="Name"
               class="control_input"
               data-aos="fade-right"
               data-aos-delay="250"
+              required
             />
             <input
-              type="mail"
+              type="email"
+              id="email"
+              name="email"
               placeholder="Email"
               class="control_input"
               data-aos="fade-right"
               data-aos-delay="300"
+              required
             />
             <textarea
-              name=""
-              id=""
+              id="message"
+              name="message"
               cols="0"
               rows="10"
+              placeholder="Message"
               class="control_input"
               data-aos="fade-right"
               data-aos-delay="400"
+              required
             ></textarea>
-
-            <input
-              type="button"
-              value="Send"
-              class="control_button button"
-              data-aos="fade-right"
-              data-aos-delay="450"
-            />
+            <button type="submit" class="control_button button" data-aos="fade-right" data-aos-delay="450">
+              Send
+            </button>
           </form>
         </div>
       </section>
+      
 
       <!-- Footer Section -->
       <footer class="footer">
@@ -1140,13 +1145,14 @@
         </div>
 
         <p data-aos="fade-down" data-aos-delay="650">
-          &#169; 2021 copyright all right reserved
+          &#169; 2024 copyright all right reserved
         </p>
       </footer>
     </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/main.js"></script>
+    
 
     <script>
       AOS.init({

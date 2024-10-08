@@ -32,3 +32,30 @@ function downloadResume() {
     link.download = 'Resum_Sri_UI&UX.pdf';     // Set the filename for download
     link.click();
 }
+// Initialize EmailJS with your User ID (from your EmailJS account)
+(function() {
+      emailjs.init('maOcV2hd3fJDVKJvw');  // Initialize EmailJS with your public key (User ID)
+  })();
+  
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();  // Prevent form from reloading the page
+  
+      // Collect form data matching EmailJS template variable names
+      const formData = {
+          from_name: document.getElementById('name').value,  // Matches EmailJS template variable for name
+          from_email: document.getElementById('email').value, // Matches EmailJS template variable for email
+          message: document.getElementById('message').value   // Matches EmailJS template variable for message
+      };
+  
+      // Send email using EmailJS
+      emailjs.send('service_bgmi5569', 'template_ro4kvau', formData)
+      .then(function(response) {
+          alert('Your message has been sent successfully!');
+          document.getElementById('contactForm').reset();
+      }, function(error) {
+          alert('Oops! Something went wrong, please try again.');
+          console.error('Failed to send email:', error);
+      });
+  });
+  
+

@@ -450,7 +450,6 @@ img {
 
 
 /* Contact */
-
 .control_input {
   width: 100%;
   font-size: var(--nomral-font-size);
@@ -470,6 +469,13 @@ img {
   cursor: pointer;
   margin-left: auto;
 }
+
+
+.control_button:hover {
+  background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%); /* Inverse gradient on hover */
+}
+
+
 
 /* Footer */
 .footer {
